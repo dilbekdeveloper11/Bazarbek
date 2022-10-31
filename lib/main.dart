@@ -1,3 +1,6 @@
+
+
+import 'package:bozorbek/bloc/home_bloc/home_cubit.dart';
 import 'package:bozorbek/core/components/size_config.dart';
 import 'package:bozorbek/screens/active_orders_page.dart';
 import 'package:bozorbek/screens/auto_orders_page.dart';
@@ -16,9 +19,19 @@ import 'package:bozorbek/screens/search_page.dart';
 import 'package:bozorbek/screens/tasty_discounts_page.dart';
 import 'package:bozorbek/Registration_pages/update_password_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => HomeCubit()..getslider()..getProduct(),
+        ),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -46,7 +59,7 @@ class MyApp extends StatelessWidget {
         ),
         primarySwatch: Colors.blue,
       ),
-      home: const LoginPage(),
+      home: HomePage(),
     );
   }
 }
