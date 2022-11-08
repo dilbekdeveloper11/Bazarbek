@@ -6,7 +6,10 @@ import 'package:bozorbek/service/slider_service.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeCubit extends Cubit<HomeState>{
-  HomeCubit():super(HomeLoadingState());
+  HomeCubit():super(HomeLoadingState()){
+    getslider();
+    getProduct();
+  }
 
 
   void getslider()async{

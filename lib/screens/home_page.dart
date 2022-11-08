@@ -146,7 +146,7 @@ class HomePage extends StatelessWidget {
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          maps[index].name.toString(),
+                                          maps[index].name,
                                           style: Theme.of(context)
                                               .textTheme
                                               .headline1
@@ -205,7 +205,7 @@ class HomePage extends StatelessWidget {
                                   ),
                                 ),
                                 Positioned(
-                                  top: getH(200),
+                                  top: getH(160),
                                   left: getW(28),
                                   child: Image.asset(
                                     "assets/images/Ellipse 244.png",
@@ -215,7 +215,7 @@ class HomePage extends StatelessWidget {
                             ),
                     );
                   }),
-                  itemCount: 5,
+                  itemCount: uzunlik,
                 ),
               );
             }),
